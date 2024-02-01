@@ -1,5 +1,5 @@
 
-¡Bienvenido al administrador de listas desarrollado en React!
+#### **¡Bienvenido al administrador de listas!**
 Este proyecto te permite gestionar tus datos de manera eficiente a través de un formulario intuitivo. 
 Al acceder desde el índice, encontrarás una interfaz limpia con un formulario que te permite ingresar información en varios campos. 
 Una vez completado, al hacer clic en el botón de envío, los datos se guardan y se reflejan automáticamente en una tabla dinámica ubicada debajo.
@@ -10,8 +10,9 @@ La conexión entre el front-end y el servidor se agiliza mediante Axios, facilit
 
 Para poner en marcha este proyecto, asegúrate de instalar las dependencias necesarias mediante los comandos:
 
-npm install
-npm install react-bootstrap bootstrap
-npm install json-server
-npm install react-router-dom
-Finalmente, para iniciar el servidor JSON, ejecuta el siguiente comando: json-server --watch db.json. ¡Listo para comenzar a gestionar tus listas de manera eficiente y fácil con este administrador de listas!
++ `npm install`
++ `npm install react-bootstrap bootstrap`
++ `npm install json-server`
++ `npm install react-router-dom`
+Finalmente, para iniciar el servidor JSON, ejecuta el siguiente comando: `json-server --watch db.json`
+¡Listo para comenzar a gestionar tus listas de manera eficiente y fácil con este administrador de listas!
