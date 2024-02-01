@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './form.css'
-import UserService from '../../../../userService';
+import UserService from '../../../service/userService';
 
 export default function FormHome () {
 
   const userService = UserService
-  // Estado para almacenar los datos del formulario
-  const [formData, setFormData] = useState({
+  // Estado inicial
+  const [formData, setFormData] = useState(
+    {
     name: '',
     surname: '',
     secondSurname: '',
@@ -14,28 +15,16 @@ export default function FormHome () {
     phone: '',
     curso: ''
   });
-    // Estado para almacenar los datos enviados
+
   // Función para manejar los cambios en los campos del formulario
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-      
     });
   };
-  
-  const [error, setError] = useState('');
-  // Función para manejar el envío del formulario
-  const handleForm = (e) => {
-    e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
 
-    // Aquí puedes realizar las validaciones que necesites antes de enviar los datos
-    // Por ejemplo, puedes verificar si todos los campos obligatorios están llenos
-
-    // Enviar el objeto mediante POST a la API ficticia
-    userService.createUser(formData);
-
-  }
+   // Función para manejar el envío del formulario
   const handleSubmit = (e)=>{
     alert('Enviando datos...');
     userService.createUser(formData)
@@ -69,14 +58,14 @@ export default function FormHome () {
               </div>
               <div class="container mt-4">
                 <div class="row">
-              
+
                   <div class="col-xl-3 col-lg-6 col-sm-12">
                     <div class="form-group">
                       <label class="fw-bold" for="inputCurso">Teléfono</label>
                       <input type="text" class="form-control" name="phone" value={formData.phone}  onChange={handleInputChange} id="inputCurso" required/>
                     </div>
-                  </div>
-              
+                  </div> 
+
                   <div class="col-xl-3 col-lg-6 col-sm-12">
                     <div class="form-group">
                       <label class="fw-bold" for="inputClase">Curso</label>
@@ -87,7 +76,6 @@ export default function FormHome () {
                  <div class="col-xl-3 col-lg-6 col-sm-12">
                     <button type="submit" class="buttonSend mt-4 mb-4 w-100 h-70" onClick={handleSubmit}>Enviar
                       <img src="/src/images/btn-submit-row-blanco.png" />
-                      
                     </button>
                  </div>
                 </div>

@@ -3,26 +3,31 @@ import Table from 'react-bootstrap/Table';
 import './table.css'
 import TableRow from './TableRow';
 import Container from 'react-bootstrap/Container'
-import UserService from '../../../../userService';
+import UserService from '../../../service/userService';
 import { useState, useEffect } from 'react';
 
 
-function TableHome ( ) {
-
+function TableHome () {
   const [userList, setUserList] = useState([]);
 
   const getUserlist = async () => {
-      const finalUserList = await UserService.getUsers();
-      console.log("esto es table home"+finalUserList);
-      setUserList(finalUserList);
+    //metemos en la constante userList el array de users que nos devuelve el servicio
+      setUserList(await UserService.getUsers())
+  };
 
+  const handleChildChange = () => {
+    getUserlist();
   }
 
+  useEffect(() => {
+    getUserlist();
+  },[]); 
+  
 
     return (
-      <Container>
-      <div className='tableHome p-2'>
-        <Table className = 'table-default rounded-2 ' >
+      <Container >
+      <div className='tableHome p-3'>
+        <Table  className = 'table-default rounded-2 ' >
           <thead>
           <tr >
             <th >Nombre</th>
@@ -31,22 +36,16 @@ function TableHome ( ) {
             <th>Email</th>
             <th>Teléfono</th>
             <th>Curso</th>
+            <th></th>
           </tr>  
         </thead>
         <tbody>
-        {userList.map((user, index) => (
-              <TableRow  key={index} user={user} />
+        {userList.map((user) => (
+              <TableRow user={user} onChange={handleChildChange} />
             ))}
           
         </tbody>
         </Table>
-      </div>
-
-      <div class="col-md-2 col-sm-12 mt-2 d-flex align-items-center">
-        <button class="buttonSend w-100 h-auto py-2" id="loadList">Guardar lista</button>
-      </div>
-      <div class="col-md-2 col-sm-12 mt-2 d-flex align-items-center">
-        <button class="buttonSend w-100 h-auto py-2" onClick={getUserlist}>Cargar lista</button>
       </div>
       </Container>
 

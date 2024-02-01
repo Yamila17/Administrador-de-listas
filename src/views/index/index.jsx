@@ -4,13 +4,11 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useNavigate } from 'react-router';
+
 
 function Index() {
-  const redirection = () => {
-    // Lógica para redireccionar
-    console.log('Redirigiendo...');
-  };
-
+  const navigate = useNavigate();
   return (
     <div className="content">
       <Container className='d-flex justify-content-center '>
@@ -21,7 +19,7 @@ function Index() {
               <p className='text-white '>¡Bienvenido al seleccionador de casas de Howards! Aquí podrás podrás gestionar a cada alumno, los grupos y actividades de una forma rápida ágil y mágica.</p>
               </Col>
               <Col md={10} xs={11} lg={11}>
-              <button className='mt-2 btnAccess' onClick={redirection}>Acceso</button>
+              <button className='mt-2 btnAccess' onClick={() => navigate('/home')}>Acceso</button>
               </Col>
               <Col md={4} xs={4} lg={4}>
                 <section className='flagsHouse'>

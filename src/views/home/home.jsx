@@ -8,6 +8,7 @@ import '../home/home.css'
 import Footer from './footer/Footer'
 
 function Home() {
+  
     return (
       <div className='contentHome'>
         <Container>

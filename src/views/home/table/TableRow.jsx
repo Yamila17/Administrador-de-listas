@@ -1,6 +1,16 @@
-import './table.css'
+import '../table/tableRow.css'
+import UserService from '../../../service/userService';
 
-function TableRow ({user}){
+
+
+function TableRow ({user, onChange}){
+
+    const handleDelete= ()=>{
+        UserService.deleteUser(user);
+        onChange("Nuevo valor");
+    }
+
+
     return (
         <tr>
             <td>{user.name}</td>
@@ -9,8 +19,9 @@ function TableRow ({user}){
             <td>{user.email}</td>
             <td>{user.phone}</td>
             <td>{user.curso}</td>
-            
+            <td><button className="buttonDelete" onClick={handleDelete} ></button></td>
         </tr>
     )
+    
 }
 export default TableRow;
