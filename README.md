@@ -14,4 +14,4 @@ npm install
 npm install react-bootstrap bootstrap
 npm install json-server
 npm install react-router-dom
-Finalmente, para iniciar el servidor JSON, ejecuta el siguiente comando: json-server --watch db.json. ¡Listo para comenzar a gestionar tus listas de manera eficiente y fácil con este administrador desarrollado en React!
+Finalmente, para iniciar el servidor JSON, ejecuta el siguiente comando: json-server --watch db.json. ¡Listo para comenzar a gestionar tus listas de manera eficiente y fácil con este administrador de listas!
