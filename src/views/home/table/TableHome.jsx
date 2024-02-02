@@ -11,7 +11,6 @@ function TableHome () {
   const [userList, setUserList] = useState([]);
 
   const getUserlist = async () => {
-    //metemos en la constante userList el array de users que nos devuelve el servicio
       setUserList(await UserService.getUsers())
   };
 

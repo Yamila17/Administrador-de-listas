@@ -5,7 +5,7 @@ import UserService from '../../../service/userService';
 export default function FormHome () {
 
   const userService = UserService
-  // Estado inicial
+
   const [formData, setFormData] = useState(
     {
     name: '',
@@ -16,7 +16,7 @@ export default function FormHome () {
     curso: ''
   });
 
-  // Función para manejar los cambios en los campos del formulario
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -24,7 +24,7 @@ export default function FormHome () {
     });
   };
 
-   // Función para manejar el envío del formulario
+
   const handleSubmit = (e)=>{
     alert('Enviando datos...');
     userService.createUser(formData)
