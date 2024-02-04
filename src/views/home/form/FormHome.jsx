@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './form.css'
 import UserService from '../../../service/userService';
+import Swal from 'sweetalert2'
 
 export default function FormHome () {
 
@@ -26,11 +27,11 @@ export default function FormHome () {
 
 
   const handleSubmit = (e)=>{
-    alert('Enviando datos...');
-    userService.createUser(formData)
-    
+
+    Swal.fire('Enviando');
+    userService.createUser(formData);
   }
-  
+
     return (
         <section  className="px-5 formHome">
           <h1 class="fs-4 mb-4 fw-bold text-center p-3">SOMBRERO SELECCIONADOR</h1>
