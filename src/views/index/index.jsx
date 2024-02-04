@@ -38,7 +38,7 @@ function Index() {
 
               </Col>
               </Card>
-
+              
       </Container>
      
     </div>

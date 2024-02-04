@@ -40,9 +40,7 @@ function TableHome () {
         </thead>
         <tbody>
         {userList.map((user) => (
-              <TableRow user={user} onChange={handleChildChange} />
-            ))}
-          
+              <TableRow user={user} onChange={handleChildChange} />))}   
         </tbody>
         </Table>
       </div>

@@ -5,9 +5,9 @@ const UserService = {
       const baseURL = "http://localhost:3000/user";
         axios.post(baseURL, formData)
           .then(response => {
-            // Manejar la respuesta de la API
+
             console.log('Respuesta de la API POST:', response.data);
-            // Manejo si hay error
+
           })
           .catch(error => {
             console.error('Error al enviar la solicitud:', error);
